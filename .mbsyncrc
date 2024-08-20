@@ -1,0 +1,49 @@
+IMAPStore eddydevink@gmail.com-remote
+Host imap.gmail.com
+Port 993
+User eddydevink@gmail.com
+PassCmd "pass eddydevink@gmail.com"
+AuthMechs LOGIN
+SSLType IMAPS
+CertificateFile /etc/ssl/certs/ca-certificates.crt
+
+MaildirStore eddydevink@gmail.com-local
+Subfolders Verbatim
+Path /home/eddy/.local/share/mail/eddydevink@gmail.com/
+Inbox /home/eddy/.local/share/mail/eddydevink@gmail.com/INBOX
+
+Channel eddydevink@gmail.com
+Expunge Both
+Master :eddydevink@gmail.com-remote:
+Slave :eddydevink@gmail.com-local:
+Patterns * !"[Gmail]/All Mail" !"*fts-flatcurve*" !"*virtual*"
+Create Both
+SyncState *
+MaxMessages 0
+ExpireUnread no
+# End profile
+
+IMAPStore eddy@eddydev.ink-remote
+Host imap.openxchange.eu
+Port 993
+User eddy@eddydev.ink
+PassCmd "pass eddy@eddydev.ink"
+AuthMechs LOGIN
+SSLType IMAPS
+CertificateFile /etc/ssl/certs/ca-certificates.crt
+
+MaildirStore eddy@eddydev.ink-local
+Subfolders Verbatim
+Path /home/eddy/.local/share/mail/eddy@eddydev.ink/
+Inbox /home/eddy/.local/share/mail/eddy@eddydev.ink/INBOX
+
+Channel eddy@eddydev.ink
+Expunge Both
+Master :eddy@eddydev.ink-remote:
+Slave :eddy@eddydev.ink-local:
+Patterns * !"[Gmail]/All Mail" !"*fts-flatcurve*" !"*virtual*"
+Create Both
+SyncState *
+MaxMessages 0
+ExpireUnread no
+# End profile
