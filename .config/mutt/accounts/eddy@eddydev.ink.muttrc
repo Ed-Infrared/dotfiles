@@ -1,0 +1,19 @@
+# vim: filetype=neomuttrc
+# muttrc file for account eddy@eddydev.ink
+set real_name = "eddy"
+set from = "eddy@eddydev.ink"
+set sendmail = "msmtp -a eddy@eddydev.ink"
+alias me eddy <eddy@eddydev.ink>
+set folder = "/home/eddy/.local/share/mail/eddy@eddydev.ink"
+set header_cache = "/home/eddy/.cache/mutt-wizard/eddy_eddydev.ink/headers"
+set message_cachedir = "/home/eddy/.cache/mutt-wizard/eddy_eddydev.ink/bodies"
+set mbox_type = Maildir
+set hostname = "eddydev.ink"
+source /usr/local/share/mutt-wizard/switch.muttrc
+set spool_file = "+INBOX"
+set postponed = "+Drafts"
+set trash = "+Trash"
+set record = "+Sent"
+
+macro index o "<shell-escape>mailsync eddy@eddydev.ink<enter>" "sync eddy@eddydev.ink"
+mailboxes "=Trash" "=Sent" "=Junk" "=INBOX/Google Play" "=INBOX/zmc" "=INBOX/xs4all" "=INBOX/Zooplus" "=INBOX/Wally" "=INBOX/Visa" "=INBOX/Vattenfall - Nuon" "=INBOX/Vakantie" "=INBOX/VVE PBP" "=INBOX/VPSServer.com" "=INBOX/Unive" "=INBOX/Tuin" "=INBOX/Triodos" "=INBOX/Tele2" "=INBOX/Tandarts" "=INBOX/Odido" "=INBOX/Simpel" "=INBOX/SMSParking" "=INBOX/Parachutespringen" "=INBOX/Osteopathie" "=INBOX/OpenBank" "=INBOX/Nemas de boer - autoverzekering" "=INBOX/Nationale Nederlanden" "=INBOX/Linux" "=INBOX/Ikea" "=INBOX/Hostnet - clicker-training.nl" "=INBOX/Hondenschool" "=INBOX/Freedom Internet - XS4All" "=INBOX/EuroDNS - eddydev.ink" "=INBOX/EBS/Zwinq - EBS" "=INBOX/EBS/Pensioenfonds" "=INBOX/EBS/2024" "=INBOX/EBS/2023" "=INBOX/EBS/2022" "=INBOX/EBS/2021" "=INBOX/EBS/2020" "=INBOX/EBS/2019" "=INBOX/EBS/2018" "=INBOX/EBS/2017" "=INBOX/EBS/2016" "=INBOX/EBS/2015" "=INBOX/EBS/2014" "=INBOX/EBS/2013" "=INBOX/EBS/2012" "=INBOX/DigitalOcean" "=INBOX/Dierenarts" "=INBOX/DSW" "=INBOX/Bunq" "=INBOX/Bloedwaardentest.nl" "=INBOX/GymOne - BigGym" "=INBOX/Bewaren" "=INBOX/Bekkers Psychologe" "=INBOX/Bax" "=INBOX/Basic Fit" "=INBOX/Auto overdracht" "=INBOX/Aegon" "=INBOX/ANWB" "=Drafts" "=Archives/2023" "=Archives/2022"
