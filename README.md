@@ -1,1 +1,1 @@
-This is my gnu-stow dotfile repository
+This is my gnu-stow dotfile repo
