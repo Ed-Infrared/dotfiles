@@ -80,6 +80,12 @@ alias vim='nvim'
 alias vi='nvim'
 alias c='clear'
 
+# Hombrew
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+export XDG_DATA_DIRS="/home/linuxbrew/.linuxbrew/share:$XDG_DATA_DIRS"
+
 # Shell integrations
 eval "$(fzf --zsh)"
-eval "$(zoxide init --cmd cd zsh)"
+
+unalias zi
+eval "$(zoxide init zsh)"
