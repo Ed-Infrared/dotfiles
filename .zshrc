@@ -1,3 +1,5 @@
+export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH
+export EDITOR=nvim
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
@@ -43,8 +45,13 @@ zinit snippet OMZP::kubectl
 zinit snippet OMZP::kubectx
 zinit snippet OMZP::command-not-found
 
-# Load completions
-autoload -Uz compinit && compinit
+# Homebrew shel completion, place before compinit.
+# source: https://docs.brew.sh/Shell-Completion
+if type brew &>/dev/null
+then
+  FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
+fi
+autoload -Uz compinit;compinit
 
 # Enable vi mode
 bindkey -v
@@ -53,6 +60,10 @@ zinit cdreplay -q
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+# brew
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+export XDG_DATA_DIRS="/home/linuxbrew/.linuxbrew/share:$XDG_DATA_DIRS"
 
 # History
 HISTSIZE=5000
@@ -75,10 +86,12 @@ zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'
 zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath'
 
 # Aliases
-alias ls='ls --color'
-alias vim='nvim'
-alias vi='nvim'
-alias c='clear'
+# brew install lsd
+alias ls="lsd"
+alias vim="nvim"
+alias vi="nvim"
+alias c="clear"
+alias cd="echo 'gebruik z'"
 
 # Hombrew
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
@@ -87,5 +100,5 @@ export XDG_DATA_DIRS="/home/linuxbrew/.linuxbrew/share:$XDG_DATA_DIRS"
 # Shell integrations
 eval "$(fzf --zsh)"
 
-unalias zi
+#unalias zi
 eval "$(zoxide init zsh)"
