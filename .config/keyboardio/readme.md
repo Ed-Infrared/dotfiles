@@ -1,0 +1,4 @@
+sudo copy 50-kaleidoscope.rules /etc/udev/rules.d/
+sudo udevadm trigger
+open in chrome-browser https://chrysalis.keyboard.io
+connect to your keyboard
