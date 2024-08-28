@@ -61,9 +61,10 @@ zinit cdreplay -q
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-# brew
-eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+# code completion
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)" # homebrew/brew 
 export XDG_DATA_DIRS="/home/linuxbrew/.linuxbrew/share:$XDG_DATA_DIRS"
+eval "$(_KHAL_COMPLETE=zsh_source khal)" # khal
 
 # History
 HISTSIZE=5000
@@ -88,17 +89,18 @@ zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath'
 # Aliases
 # brew install lsd
 alias ls="lsd"
+alias lsa="ls -al"
 alias vim="nvim"
 alias vi="nvim"
 alias c="clear"
-alias cd="echo 'gebruik z'"
 
 # Hombrew
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 export XDG_DATA_DIRS="/home/linuxbrew/.linuxbrew/share:$XDG_DATA_DIRS"
 
 # Shell integrations
+# fuzzy filefinder
 eval "$(fzf --zsh)"
-
-#unalias zi
+#unalias zi if it is set
+unalias zi 2>/dev/null || true
 eval "$(zoxide init zsh)"
