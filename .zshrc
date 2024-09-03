@@ -1,5 +1,7 @@
 export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH
 export EDITOR=nvim
+export ANSIBLE_CONFIG=$HOME/.config/ansible
+
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
@@ -93,6 +95,7 @@ alias lsa="ls -al"
 alias vim="nvim"
 alias vi="nvim"
 alias c="clear"
+alias youtube-dl='python3 /usr/local/bin/youtube-dl'
 
 # Hombrew
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
@@ -104,3 +107,4 @@ eval "$(fzf --zsh)"
 #unalias zi if it is set
 unalias zi 2>/dev/null || true
 eval "$(zoxide init zsh)"
+neofetch
