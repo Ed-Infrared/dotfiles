@@ -1,4 +1,5 @@
-export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH
+export PATH=$HOME/go:$HOME/go/bin:$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH
+export GOPATH=$HOME/go
 export EDITOR=nvim
 export ANSIBLE_CONFIG=$HOME/.config/ansible
 
@@ -59,7 +60,7 @@ autoload -Uz compinit;compinit
 bindkey -v
 
 zinit cdreplay -q
-
+9
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
@@ -107,4 +108,5 @@ eval "$(fzf --zsh)"
 #unalias zi if it is set
 unalias zi 2>/dev/null || true
 eval "$(zoxide init zsh)"
-neofetch
+# neofetch
+fastfetch -c all.jsonc
